@@ -1,0 +1,14 @@
+div, main, footer {
+    border: 1px solid;
+}
+
+a {
+    color: inherit;
+    text-decoration-line: none;
+}
+
+.svgIcon {
+    width: 16px;
+    height: 16px;
+}
+
