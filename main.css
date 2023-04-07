@@ -88,31 +88,31 @@ div, main, footer {
     text-align: center;             /*텍스트 정렬*/
 }
 
-.navItem {
+.navContainer > * {
     margin: 0;
     height: inherit;
     align-items: center;
 }
 
-.navItem_logo {
+.mainNav_logo {
     display: flex;
     justify-content: space-between;
 }
 
-.navItem_logo_btnMenu {
+.mainNav_logo_btnMenu {
     margin-top: 2px;
     margin-right: 15px;
     padding: 0;
 }
 
-.navItem_menu li {
+.mainNav_menu li {
     height: inherit;
     margin: 0;
     padding: 0;
     display: inline-block;
 }
 
-.navItem_menu li a {
+.mainNav_menu li a {
     display: inline-block;
     position: relative;
     vertical-align: middle;
@@ -122,7 +122,7 @@ div, main, footer {
     padding: 15px;
 }
 
-.navItem_menu em {
+.mainNav_menu em {
     position: absolute;
     top: 10px;
     right: -5px;
@@ -130,12 +130,12 @@ div, main, footer {
     font-style: normal;
 }
 
-.navItem_side{
+.mainNav_side{
     height: 100%;
     padding: 10px 0;
 }
 
-.navItem_side li {
+.mainNav_side li {
     display: inline-flex;
     position: relative;
     height: inherit;
@@ -145,23 +145,23 @@ div, main, footer {
     font-size: inherit;
 }
 
-.navItem_side_btnSearch {
+.mainNav_side_btnSearch {
     margin-top: 5px;
 }
 
-.navItem_side_btnSign {
+.mainNav_side_btnSign {
     margin-right: 6px;
     line-height: 1.4;
 }
 
-.navItem_side_divisior {
+.mainNav_side_divisior {
     display: inline-flex;
     vertical-align: middle;
     margin-top: 0px;
     margin-left: 15px ;
 }
 
-.navItem_side_divisior:before {
+.mainNav_side_divisior:before {
     display: inline-block;
     content: "";
     width: 1px;
@@ -170,7 +170,7 @@ div, main, footer {
     margin: auto 10px;
 }
 
-.navItem_side_divisior a{
+.mainNav_side_divisior a{
     display: inline-block;
     height: 30px;
     padding: 0 10px;
@@ -188,13 +188,120 @@ div, main, footer {
 .insightSection {
     position: relative;
     scroll-margin-top: 4px;
+    padding: 60px 0;
 }
 
-@media(min-width: 1200px)
 .sectionWrapper {
     max-width: 1060px;
     width: 87.72%;
+    margin: 0 auto;
 }
+
+.insightSection_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insightSection_header > * {
+    margin-left: 4px;
+    line-height: normal;
+}
+
+.insightSection_header h2 {
+    font-size: 22px;
+}
+
+.insightSection_header button {
+    margin-top: 3px;
+    padding: 0;
+}
+
+.insightSection_navBar {
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.insightSection_navBar > div {
+    display: flex;
+    width: 100%;
+}
+
+.insightSection_navBar > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+    border: 1px solid #e1e2e4;
+    box-shadow: 0 4px 4px rgba(0,0,0,.05);
+    border-radius: 4px;
+    color: #8a8a8a;
+    background-color: #fff;
+    outline: none;
+}
+
+.insightSection_navBar_nav {
+    display: inline-flex;
+}
+
+.insightSection_navBar_nav button {
+    display: flex!important;
+    padding: 9px 22px!important;
+    font-weight: 600!important;
+    font-size: 15px!important;
+    line-height: 146.7%!important;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    color: #8a8a8a!important;
+    border-color: #e1e2e4!important;
+    outline: none;
+    scroll-snap-align: start;
+    height: 40px!important;
+    position: relative!important;
+}
+
+.insightSection_navBar_left {
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    z-index: 1;
+}
+
+.insightSection_navBar_right {
+    right: 0;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    z-index: 1;
+}
+
+.insightSection_navBar_left button, .insightSection_navBar_right button {
+    display: inline-flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 18px;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-width: 30px;
+    min-height: 30px;
+    border: 1px solid #e1e2e4;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.05);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.05);
+    color: #8a8a8a;
+}
+
 
 
 .thumbnail_insight {
