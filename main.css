@@ -1,5 +1,40 @@
-div, main, footer {
-    border: 1px solid;
+/* import */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css");
+
+/* 기본 태그 */
+button, div, h1, h2, h3, h4, h5, h6, input, p, select, span, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.42857143;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+footer {
+    padding: 18px 0 65px;
+    background-color: #fff;
+    border-top: 1px solid #ececec;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -7,8 +42,187 @@ a {
     text-decoration-line: none;
 }
 
+button {
+    margin: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+/* 개발을 위한 설정 */
+div, main, footer {
+    border: 1px solid;
+}
+/* 개발 이후 삭제! */
+
+/* common */
 .svgIcon {
     width: 16px;
     height: 16px;
 }
 
+.profileIcon {
+    width: 24px;
+    height: 24px;
+}
+
+/* nav */
+.mainNav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+    z-index: 800;
+}
+
+.navContainer {
+    display: flex;
+    width: 1060px;
+    height: inherit;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;            /*아이템 세로정렬*/
+    justify-content: space-between; /*아이템 가로 정렬*/
+    text-align: center;             /*텍스트 정렬*/
+}
+
+.navItem {
+    margin: 0;
+    height: inherit;
+    align-items: center;
+}
+
+.navItem_logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navItem_logo_btnMenu {
+    margin-top: 2px;
+    margin-right: 15px;
+    padding: 0;
+}
+
+.navItem_menu li {
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.navItem_menu li a {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.navItem_menu em {
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    pointer-events: none;
+    font-style: normal;
+}
+
+.navItem_side{
+    height: 100%;
+    padding: 10px 0;
+}
+
+.navItem_side li {
+    display: inline-flex;
+    position: relative;
+    height: inherit;
+    position: relative;
+    margin: 0;
+    vertical-align: middle;
+    font-size: inherit;
+}
+
+.navItem_side_btnSearch {
+    margin-top: 5px;
+}
+
+.navItem_side_btnSign {
+    margin-right: 6px;
+    line-height: 1.4;
+}
+
+.navItem_side_divisior {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-top: 0px;
+    margin-left: 15px ;
+}
+
+.navItem_side_divisior:before {
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 10px;
+    background-color: #e1e2e3;
+    margin: auto 10px;
+}
+
+.navItem_side_divisior a{
+    display: inline-block;
+    height: 30px;
+    padding: 0 10px;
+    margin-left: 15px;
+    line-height: 30px;
+    color: #666;
+    border: 1px solid #e1e2e3;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* section */
+
+.insightSection {
+    position: relative;
+    scroll-margin-top: 4px;
+}
+
+@media(min-width: 1200px)
+.sectionWrapper {
+    max-width: 1060px;
+    width: 87.72%;
+}
+
+
+.thumbnail_insight {
+    width: 248.22px;
+    height: 175px;
+    object-fit: cover;
+}
+
+.thumbnail_event {
+    width: 522px;
+    height: 273px;
+    object-fit: cover;
+}
+
+.testBanner {
+    background: #0d99ff;
+    color: #fff;
+    border-radius: 10px;
+    padding: 28px 0 22px 120px;
+    background-image: url(https://static.wanted.co.kr/images/type-test/typetest-banner-image.png);
+    background-size: auto 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+}
+
+.lineBanner {
+    background-image: linear-gradient(90deg,#01a9fe -12%,#2f5fef 37%,#046afe 72%,#00d2dd 110%);
+    color: #fff;
+    border-radius: 38.5px;
+    padding: 21px 30px 21px 30px;
+}
