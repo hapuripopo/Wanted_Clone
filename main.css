@@ -53,6 +53,7 @@ button {
 div, main, footer {
     border: 1px solid;
 }
+
 /* 개발 이후 삭제! */
 
 /* common */
@@ -218,17 +219,22 @@ div, main, footer {
 }
 
 .insightSection_navBar {
+    position: relative;
     display: flex;
-    width: inherit;
+    flex-direction: row;
+    width: 100%;
+    margin: 30px 0;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0;
 }
 
 .insightSection_navBar > div {
+    position: relative;
     display: flex;
     width: 100%;
+    max-width: calc(100% - 40px - 8px);
 }
+
 
 .insightSection_navBar > button {
     display: flex;
@@ -246,7 +252,18 @@ div, main, footer {
 }
 
 .insightSection_navBar_nav {
-    display: inline-flex;
+    display: flex;
+    padding-bottom: 0.5px;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior: contain;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    grid-gap: 8px;
+    gap: 8px;
+}
+
+.insightSection_navBar_nav::-webkit-scrollbar {
+    display: none;
 }
 
 .insightSection_navBar_nav button {
@@ -258,7 +275,8 @@ div, main, footer {
     -ms-flex-negative: 0;
     flex-shrink: 0;
     color: #8a8a8a!important;
-    border-color: #e1e2e4!important;
+    border: 1px solid #e1e2e4!important;
+    border-radius: 25px;
     outline: none;
     scroll-snap-align: start;
     height: 40px!important;
@@ -267,17 +285,19 @@ div, main, footer {
 
 .insightSection_navBar_left {
     left: 0;
-    display: flex;
-    justify-content: flex-start;
     position: absolute;
+    display: flex;
+    width: 80px;
+    justify-content: flex-start;
     z-index: 1;
 }
 
 .insightSection_navBar_right {
     right: 0;
-    display: flex;
-    justify-content: flex-start;
     position: absolute;
+    display: flex;
+    width: 80px;
+    justify-content: flex-end;
     z-index: 1;
 }
 
@@ -302,8 +322,6 @@ div, main, footer {
     color: #8a8a8a;
 }
 
-
-
 .thumbnail_insight {
     width: 248.22px;
     height: 175px;
@@ -315,6 +333,8 @@ div, main, footer {
     height: 273px;
     object-fit: cover;
 }
+
+/* Banner */
 
 .testBanner {
     background: #0d99ff;
