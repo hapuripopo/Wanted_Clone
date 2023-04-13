@@ -49,10 +49,15 @@ button {
     cursor: pointer;
 }
 
-/* 개발을 위한 설정 */
-div, main, footer {
-    border: 1px solid;
+svg {
+    fill: currentColor;
+    font-size: inherit;
 }
+
+/* 개발을 위한 설정 */
+/* div, main, footer {
+    border: 1px solid;
+} */
 
 /* 개발 이후 삭제! */
 
@@ -67,11 +72,43 @@ div, main, footer {
     height: 24px;
 }
 
+.btnLeft, .btnRight {
+    display: flex;
+    z-index: 1;
+}
+
+.btnLeft button, .btnRight button {
+    display: inline-flex;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 18px;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-width: 30px;
+    min-height: 30px;
+    border: 1px solid #e1e2e4;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.05);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.05);
+    color: #8a8a8a;
+}
+
+.main {
+    position: relative;
+    padding: 25px;
+    background-color: #fff;
+}
+
 /* nav */
 .mainNav {
     width: 100%;
     position: fixed;
-    top: 0;
+    margin: 0 auto;
     background-color: #fff;
     -webkit-box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
@@ -79,8 +116,9 @@ div, main, footer {
 }
 
 .navContainer {
+    position: relative;
     display: flex;
-    width: 1060px;
+    max-width: 1060px;
     height: inherit;
     margin: auto;
     flex-wrap: wrap;
@@ -186,17 +224,20 @@ div, main, footer {
 
 /* section */
 
+.sectionWrapper {
+    max-width: 1060px;
+    width: 87.72%;
+    margin: 0 auto;
+}
+
+/* section - insight */
+
 .insightSection {
     position: relative;
     scroll-margin-top: 4px;
     padding: 60px 0;
 }
 
-.sectionWrapper {
-    max-width: 1060px;
-    width: 87.72%;
-    margin: 0 auto;
-}
 
 .insightSection_header {
     display: flex;
@@ -285,58 +326,205 @@ div, main, footer {
 
 .insightSection_navBar_left {
     left: 0;
-    position: absolute;
-    display: flex;
     width: 80px;
+    position: absolute;
     justify-content: flex-start;
-    z-index: 1;
 }
 
 .insightSection_navBar_right {
     right: 0;
-    position: absolute;
-    display: flex;
     width: 80px;
+    position: absolute;
     justify-content: flex-end;
-    z-index: 1;
 }
 
-.insightSection_navBar_left button, .insightSection_navBar_right button {
-    display: inline-flex;
+.insightSection_list > ul {
+    display: flex;
+    width: 100%!important;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    list-style-type: none;
+    grid-gap: 32px 20px;
+    gap: 32px 20px;
+    width: 1060px;
+    margin: 0 auto 50px;
+}
+
+.insightSection_list li {
     position: relative;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    font-size: 18px;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-align: center;
-    align-items: center;
-    min-width: 30px;
-    min-height: 30px;
-    border: 1px solid #e1e2e4;
-    border-radius: 50%;
-    background-color: #fff;
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.05);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.05);
-    color: #8a8a8a;
+    will-change: transform;
+    width: calc(25% - 15px);
 }
 
-.thumbnail_insight {
+.insightSection_list_thumbnail {
     width: 248.22px;
     height: 175px;
     object-fit: cover;
 }
 
-.thumbnail_event {
-    width: 522px;
+.insightSection_btnMore {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 345px;
+    height: 50px;
+    margin: 0 auto;
+    color: #171717!important;
+    border: 1px solid #e1e2e4!important;
+    border-radius: 25px;
+    line-height: normal;
+}
+
+.insightSection_btnMore > button {
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* section - event */
+
+.eventSection {
+    position: relative;
+    padding: 60px 0;
+}
+
+.eventSection_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.eventSection_header_title {
+    display: flex;
+    grid-gap: 8px;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.eventSection_header_title h2, .navSection_header h2 {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.eventSection_header_title a {
+    font-size: 15px;
+    margin: 5px 0 0;
+    font-weight: 500;
+    line-height: normal;
+    vertical-align: middle;
+    color: #8a8a8a!important;
+}
+
+.eventSection_header_title svg {
+    position: relative;
+    top: 2.3px;
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentColor;
+    flex-shrink: 0;
+    font-size: inherit;
+}
+
+.eventSection_header_title > div {
+    text-align: center;
+}
+
+.eventSection_content {
+    display: flex;
+}
+
+.eventSection_content > div {
+    width: 100%;
+    display: inline-block;
+    padding: 8px;
+}
+
+.eventSection_content_thumbnail {
+    width: 100%;
     height: 273px;
     object-fit: cover;
 }
 
+/* section - nav */
+.navSection {
+    position: relative;
+    padding: 60px 0 80px;
+}
+
+.navSection_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    grid-gap: 8px;
+    gap: 8px;
+}
+
+.navSection_content {
+    display: flex;
+    width: 100%;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    color: #333;
+}
+
+.navSection_content > div {
+    display: flex;
+    width: 25%;
+    padding: 18px 0 0;
+    justify-content: center;
+    border-right: 1px solid #ececec;
+    flex-wrap: wrap;
+}
+
+.navSection_content > div > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+.navSection_content > div span {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.navSection_content button {
+    height: 50px;
+    padding: 6px 8px;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 700;
+}
+
 /* Banner */
 
+.divider {
+    width: 1060px;
+    margin: 0 auto;
+}
+
+.divider > hr {
+    height: 1px;
+    margin: 0;
+    border: none;
+    background-color: #e1e2e4;
+}
+
 .testBanner {
+    max-width: 1060px;
+    margin: 0 auto 60px;
+}
+
+.testBanner > div {
     background: #0d99ff;
     color: #fff;
     border-radius: 10px;
@@ -347,9 +535,143 @@ div, main, footer {
     background-repeat: no-repeat;
 }
 
+.testBanner svg {
+    display: inline-block;
+}
+
+.testBanner_title {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.testBanner_subTitle {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: .0056em;
+    height: 32px;
+}
+
+.testBanner_subTitle > span {
+    display: flex;
+    vertical-align: center;
+}
+
 .lineBanner {
+    max-width: 1060px;
+    margin: 60px auto 0;
+}
+
+.lineBanner > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: linear-gradient(90deg,#01a9fe -12%,#2f5fef 37%,#046afe 72%,#00d2dd 110%);
     color: #fff;
     border-radius: 38.5px;
     padding: 21px 30px 21px 30px;
+}
+
+.lineBanner svg {
+    margin-top: 3px;
+}
+
+.lineBanner_title {
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* footer */
+
+.footer {
+    padding: 18px 0 65px;
+    background-color: #fff;
+    border-top: 1px solid #ececec;
+}
+
+.footerWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto 18px;
+    margin: 0 auto 18px;
+}
+
+.footerWrapper:nth-child(1) {
+    justify-content: space-between;
+}
+
+.footer_nav {
+    display: flex;
+}
+
+.footer_nav > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 43px;
+    width: 113px;
+}
+
+.footer_nav > div {
+    display: flex;
+    align-items: center;
+}
+
+.footer_nav > div > a  {
+    font-size: 15px;
+    color: #3a3a3a;
+    font-weight: 500;
+    line-height: 2.8;
+    margin-right: 45px;
+    white-space: nowrap;
+}
+
+.footer_nav_logo {
+    position: relative;
+    top: 2px;
+}
+
+.footer_icon {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    line-height: 2.6;
+}
+
+.footer_icon > a {
+    position: relative;
+    display: block;
+    float: left;
+    height: 20px;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+.footerDivider {
+    border-top: 1px solid #ececec;
+}
+
+.footerTxt {
+    padding-top: 25px;
+    float: left;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6666666667em;
+    color: #767676;
+    width: calc(100% - 290px);
+    margin-right: 40px;
+}
+
+/* 임시방편 .. */
+.slick-slider_track{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
 }
